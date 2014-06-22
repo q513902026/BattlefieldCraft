@@ -1,0 +1,16 @@
+name: BattlefieldCraft
+version:  alpha
+authors: [icrdr,HopeAsd]
+
+main: com.ich.battlefield.BattlefieldCraft
+
+commands:
+  BattlefieldCraft:
+    aliases: battle
+permissions:
+  battle.admin:
+    description: 允许使用battle管理员命令
+    default: op
+  battle.use:
+    description: 允许使用battle命令
+    default: true
