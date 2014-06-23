@@ -1,4 +1,4 @@
-name: BattlefieldCraft
+ï»¿name: BattlefieldCraft
 version:  alpha
 authors: [icrdr,HopeAsd]
 
@@ -9,8 +9,8 @@ commands:
     aliases: battle
 permissions:
   battle.admin:
-    description: ÔÊĞíÊ¹ÓÃbattle¹ÜÀíÔ±ÃüÁî
+    description: å…è®¸ä½¿ç”¨battleç®¡ç†å‘˜å‘½ä»¤
     default: op
   battle.use:
-    description: ÔÊĞíÊ¹ÓÃbattleÃüÁî
+    description: å…è®¸ä½¿ç”¨battleå‘½ä»¤
     default: true
