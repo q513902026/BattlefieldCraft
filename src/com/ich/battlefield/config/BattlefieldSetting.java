@@ -1,5 +1,6 @@
 package com.ich.battlefield.config;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +12,11 @@ import com.ich.battlefield.core.Area;
 
 public class BattlefieldSetting extends PluginSetting
 {
-    public Set<String> battlefieldList = new HashSet<>();
+    
+    /**
+     *  以战场的名称为key 以这个战场是否开始为Value
+     */
+    public HashMap<String,Boolean> battlefieldList = new HashMap<>();
     public ConfigurationSection battleListSetting;
     public ConfigurationSection battleDataSetting;
     
@@ -25,8 +30,20 @@ public class BattlefieldSetting extends PluginSetting
     @Override
     public void save()
     {
-        // TODO 自动生成的方法存根
         
+    }
+
+    /**
+     * @param string 战场的名字
+     * @return 这个战场是否开始
+     */
+    public boolean isBattlefield(String string)
+    {
+        if(!(this.battlefieldList.containsKey(string)))
+        {
+            return false;
+        }
+        return battlefieldList.get(string);
     }
     
 }

@@ -8,12 +8,18 @@ import com.ich.battlefield.BattlefieldCraft;
 public class BattlefieldCommonSetting extends PluginSetting
 {
     public ConfigurationSection commandSetting;
+    private ConfigurationSection langSetting;
     public BattlefieldCommonSetting(FileConfiguration config)
     {
         super(config);
+        langSetting = config.getConfigurationSection("BattlefieldCommon.langSetting");
         commandSetting = config.getConfigurationSection("BattlefieldCommon.commandSetting");
     }
-
+    
+    public String getDefLanguager(String path,String def)
+    {
+        return langSetting.getString(path, def);
+    }
     public String getMainCommandUsage()
     {
         return commandSetting.getString("usage", "/<BattlefieldCraft|battle> [子命令]");

@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.ich.battlefield.config.BattlefieldCommonSetting;
@@ -14,7 +15,8 @@ import com.ich.battlefield.config.BattlefieldSetting;
 import com.ich.battlefield.config.PlayerDataSetting;
 
 public class BattlefieldCraft extends JavaPlugin
-{
+{   
+    public PluginManager pm;
     public static BattlefieldCraft instance;
     public BattlefieldSetting battlefieldSetting;
     public FileConfiguration battlefieldConfig;
@@ -26,6 +28,7 @@ public class BattlefieldCraft extends JavaPlugin
     @Override
     public void onEnable()
     {
+        pm = this.getServer().getPluginManager();
         instance = this;
         loadSetting();
     }
